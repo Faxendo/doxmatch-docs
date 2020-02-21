@@ -1,493 +1,959 @@
-
 <!doctype html>
 <html>
   <head>
     <meta charset="utf-8">
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>API Reference</title>
+    <title>DoxMatch API Reference</title>
 
     <style>
       .highlight table td { padding: 5px; }
 .highlight table pre { margin: 0; }
-.highlight .gh {
-  color: #999999;
+.highlight, .highlight .w {
+  color: #f8f8f2;
+  background-color: #272822;
 }
-.highlight .sr {
-  color: #f6aa11;
+.highlight .err {
+  color: #272822;
+  background-color: #f92672;
 }
-.highlight .go {
-  color: #888888;
-}
-.highlight .gp {
-  color: #555555;
-}
-.highlight .gs {
-}
-.highlight .gu {
-  color: #aaaaaa;
-}
-.highlight .nb {
-  color: #f6aa11;
-}
-.highlight .cm {
+.highlight .c, .highlight .cd, .highlight .cm, .highlight .c1, .highlight .cs {
   color: #75715e;
 }
 .highlight .cp {
-  color: #75715e;
-}
-.highlight .c1 {
-  color: #75715e;
-}
-.highlight .cs {
-  color: #75715e;
-}
-.highlight .c, .highlight .cd {
-  color: #75715e;
-}
-.highlight .err {
-  color: #960050;
-}
-.highlight .gr {
-  color: #960050;
-}
-.highlight .gt {
-  color: #960050;
-}
-.highlight .gd {
-  color: #49483e;
-}
-.highlight .gi {
-  color: #49483e;
-}
-.highlight .ge {
-  color: #49483e;
-}
-.highlight .kc {
-  color: #66d9ef;
-}
-.highlight .kd {
-  color: #66d9ef;
-}
-.highlight .kr {
-  color: #66d9ef;
-}
-.highlight .no {
-  color: #66d9ef;
-}
-.highlight .kt {
-  color: #66d9ef;
-}
-.highlight .mf {
-  color: #ae81ff;
-}
-.highlight .mh {
-  color: #ae81ff;
-}
-.highlight .il {
-  color: #ae81ff;
-}
-.highlight .mi {
-  color: #ae81ff;
-}
-.highlight .mo {
-  color: #ae81ff;
-}
-.highlight .m, .highlight .mb, .highlight .mx {
-  color: #ae81ff;
-}
-.highlight .sc {
-  color: #ae81ff;
-}
-.highlight .se {
-  color: #ae81ff;
-}
-.highlight .ss {
-  color: #ae81ff;
-}
-.highlight .sd {
-  color: #e6db74;
-}
-.highlight .s2 {
-  color: #e6db74;
-}
-.highlight .sb {
-  color: #e6db74;
-}
-.highlight .sh {
-  color: #e6db74;
-}
-.highlight .si {
-  color: #e6db74;
-}
-.highlight .sx {
-  color: #e6db74;
-}
-.highlight .s1 {
-  color: #e6db74;
-}
-.highlight .s {
-  color: #e6db74;
-}
-.highlight .na {
-  color: #a6e22e;
-}
-.highlight .nc {
-  color: #a6e22e;
-}
-.highlight .nd {
-  color: #a6e22e;
-}
-.highlight .ne {
-  color: #a6e22e;
-}
-.highlight .nf {
-  color: #a6e22e;
-}
-.highlight .vc {
-  color: #ffffff;
-}
-.highlight .nn {
-  color: #ffffff;
-}
-.highlight .nl {
-  color: #ffffff;
-}
-.highlight .ni {
-  color: #ffffff;
-}
-.highlight .bp {
-  color: #ffffff;
-}
-.highlight .vg {
-  color: #ffffff;
-}
-.highlight .vi {
-  color: #ffffff;
-}
-.highlight .nv {
-  color: #ffffff;
-}
-.highlight .w {
-  color: #ffffff;
-}
-.highlight {
-  color: #ffffff;
-}
-.highlight .n, .highlight .py, .highlight .nx {
-  color: #ffffff;
-}
-.highlight .ow {
-  color: #f92672;
+  color: #f4bf75;
 }
 .highlight .nt {
+  color: #f4bf75;
+}
+.highlight .o, .highlight .ow {
+  color: #f8f8f2;
+}
+.highlight .p, .highlight .pi {
+  color: #f8f8f2;
+}
+.highlight .gi {
+  color: #a6e22e;
+}
+.highlight .gd {
   color: #f92672;
 }
-.highlight .k, .highlight .kv {
-  color: #f92672;
+.highlight .gh {
+  color: #66d9ef;
+  background-color: #272822;
+  font-weight: bold;
 }
-.highlight .kn {
-  color: #f92672;
+.highlight .k, .highlight .kn, .highlight .kp, .highlight .kr, .highlight .kv {
+  color: #ae81ff;
 }
-.highlight .kp {
-  color: #f92672;
+.highlight .kc {
+  color: #fd971f;
 }
-.highlight .o {
-  color: #f92672;
+.highlight .kt {
+  color: #fd971f;
+}
+.highlight .kd {
+  color: #fd971f;
+}
+.highlight .s, .highlight .sb, .highlight .sc, .highlight .sd, .highlight .s2, .highlight .sh, .highlight .sx, .highlight .s1 {
+  color: #a6e22e;
+}
+.highlight .sr {
+  color: #a1efe4;
+}
+.highlight .si {
+  color: #cc6633;
+}
+.highlight .se {
+  color: #cc6633;
+}
+.highlight .nn {
+  color: #f4bf75;
+}
+.highlight .nc {
+  color: #f4bf75;
+}
+.highlight .no {
+  color: #f4bf75;
+}
+.highlight .na {
+  color: #66d9ef;
+}
+.highlight .m, .highlight .mf, .highlight .mh, .highlight .mi, .highlight .il, .highlight .mo, .highlight .mb, .highlight .mx {
+  color: #a6e22e;
+}
+.highlight .ss {
+  color: #a6e22e;
 }
     </style>
-    <link href="stylesheets/screen.css" rel="stylesheet" media="screen" />
-    <link href="stylesheets/print.css" rel="stylesheet" media="print" />
-      <script src="javascripts/all.js"></script>
+    <link href="stylesheets/screen-2565733b.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print-a71b3e5e.css" rel="stylesheet" media="print" />
+      <script src="javascripts/all-b7d7e117.js"></script>
   </head>
 
-  <body class="index" data-languages="[&quot;shell&quot;,&quot;ruby&quot;,&quot;python&quot;,&quot;javascript&quot;]">
+  <body class="index" data-languages="[&quot;shell&quot;]">
     <a href="#" id="nav-button">
       <span>
         NAV
-        <img src="images/navbar.png" alt="Navbar" />
+        <img src="images/navbar-cad8cdcb.png" alt="Navbar" />
       </span>
     </a>
-    <div class="toc-wrapper">
-      <img src="images/logo.png" class="logo" alt="Logo" />
+    <div class="tocify-wrapper">
+      <img src="images/logo-5d1cede4.png" alt="Logo" />
         <div class="lang-selector">
               <a href="#" data-language-name="shell">shell</a>
-              <a href="#" data-language-name="ruby">ruby</a>
-              <a href="#" data-language-name="python">python</a>
-              <a href="#" data-language-name="javascript">javascript</a>
         </div>
         <div class="search">
           <input type="text" class="search" id="input-search" placeholder="Search">
         </div>
         <ul class="search-results"></ul>
-      <ul id="toc" class="toc-list-h1">
-          <li>
-            <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
-          </li>
-          <li>
-            <a href="#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
-          </li>
-          <li>
-            <a href="#kittens" class="toc-h1 toc-link" data-title="Kittens">Kittens</a>
-              <ul class="toc-list-h2">
-                  <li>
-                    <a href="#get-all-kittens" class="toc-h2 toc-link" data-title="Get All Kittens">Get All Kittens</a>
-                  </li>
-                  <li>
-                    <a href="#get-a-specific-kitten" class="toc-h2 toc-link" data-title="Get a Specific Kitten">Get a Specific Kitten</a>
-                  </li>
-                  <li>
-                    <a href="#delete-a-specific-kitten" class="toc-h2 toc-link" data-title="Delete a Specific Kitten">Delete a Specific Kitten</a>
-                  </li>
-              </ul>
-          </li>
-          <li>
-            <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
-          </li>
-      </ul>
+      <div id="toc">
+      </div>
         <ul class="toc-footer">
-            <li><a href='#'>Sign Up for a Developer Key</a></li>
-            <li><a href='https://github.com/lord/slate'>Documentation Powered by Slate</a></li>
+            <li><a href='https://github.com/tripit/slate' target="_blank">Documentation Powered by Slate</a></li>
         </ul>
     </div>
     <div class="page-wrapper">
       <div class="dark-box"></div>
       <div class="content">
         <h1 id='introduction'>Introduction</h1>
-<p>Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.</p>
+<p>Bienvenue dans la Documentation du service DoxMatch !</p>
 
-<p>We have language bindings in Shell, Ruby, Python, and JavaScript! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.</p>
+<p>Cette page vous décrira tout ce qu&#39;il y a à savoir sur l&#39;API DoxMatch, et vous permettra ainsi d&#39;intégrer notre service directement au sein de votre application.</p>
 
-<p>This example API documentation page was created with <a href="https://github.com/lord/slate">Slate</a>. Feel free to edit it and use it as a base for your own API&#39;s documentation.</p>
-<h1 id='authentication'>Authentication</h1>
+<p>Attention, l&#39;API DoxMatch nécessite un abonnement &quot;Expert&quot; minimum pour fonctionner.</p>
+<h1 id='librairies'>Librairies</h1>
+<p>Pour l&#39;instant, aucune librairie n&#39;est disponible, mais n&#39;hésitez pas à nous contacter si vous en créez une pour que nous la partagions ici ;)</p>
+
+          <h1 id='authentification'>Authentification</h1>
 <blockquote>
-<p>To authorize, use this code:</p>
+<p>Pour récupérer votre SessionCode, il est nécessaire de fournir votre AuthKey et AuthSecret</p>
 </blockquote>
-<pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-</code></pre><pre class="highlight shell tab-shell"><code><span class="c"># With shell, you can just pass the correct header with each request</span>
-curl <span class="s2">"api_endpoint_here"</span>
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.doxmatch.net/v1/login"</span>
+  -H <span class="s2">"X-Auth-Key: yourauthkey"</span>
+  -H <span class="s2">"X-Auth-Secret: yourauthsecret"</span>
 </code></pre>
 <blockquote>
-<p>Make sure to replace <code>meowmeowmeow</code> with your API key.</p>
+<p>Une fois votre SessionCode récupéré, vous pouvez le transmettre dans vos requêtes</p>
 </blockquote>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"api_endpoint"</span>
+  -H <span class="s2">"X-Auth-Session: yoursessioncode"</span>
+</code></pre>
+<p>L&#39;API DoxMatch utilise une méthode d&#39;authentification en deux étapes.</p>
 
-<p>Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our <a href="http://example.com/developers">developer portal</a>.</p>
+<p>En premier, vous devez vous connecter à l&#39;API en fournissant votre AuthKey et AuthSecret (que vous pouvez générer sur votre panel) via les Headers <code>X-Auth-Key</code> et <code>X-Auth-Secret</code></p>
 
-<p>Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:</p>
+<p><code>GET https://api.doxmatch.net/v1/login</code></p>
 
-<p><code>Authorization: meowmeowmeow</code></p>
+<p>L&#39;action <code>login</code> vous renverra un SessionCode, valable pendant 1 heure et uniquement depuis le serveur qui l&#39;a demandé. Vous pouvez transmettre votre SessionCode via le Header <code>X-Auth-Session</code> </p>
 
 <aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
+Par mesure de sécurité, le <code>SessionCode</code> n'est valable qu'une heure, et uniquement depuis le serveur d'origine de la demande !
 </aside>
-<h1 id='kittens'>Kittens</h1><h2 id='get-all-kittens'>Get All Kittens</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
 
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens"</span>
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">kittens</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="nx">get</span><span class="p">();</span>
+          <h1 id='tournois'>Tournois</h1><h2 id='l-39-objet-39-tournoi-39'>L&#39;objet &#39;Tournoi&#39;</h2>
+<blockquote>
+<p>Exemple d&#39;objet Tournoi</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"name"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Tournament name"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"match_count"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"creation_date"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-02-24 13:37:42"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<table><thead>
+<tr>
+<th>Attribut</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>L&#39;identifiant unique du tournoi</td>
+</tr>
+<tr>
+<td>name</td>
+<td>Nom du tournoi</td>
+</tr>
+<tr>
+<td>match_count</td>
+<td>Nombre de matchs créés dans ce tournoi</td>
+</tr>
+<tr>
+<td>creation_date</td>
+<td>Date de création du tournoi</td>
+</tr>
+</tbody></table>
+<h2 id='recuperer-tous-vos-tournois'>Récupérer tous vos tournois</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.doxmatch.net/v1/tournaments"</span>
+  -H <span class="s2">"X-Auth-Session: yoursessioncode"</span>
 </code></pre>
 <blockquote>
-<p>The above command returns JSON structured like this:</p>
+<p>Le résultat de cette commande sera un tableau de tournois :</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
   </span><span class="p">{</span><span class="w">
     </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fluffums"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"calico"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test Tournament"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"creation_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-02-18 19:37:54"</span><span class="w">
   </span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Max"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
-  </span><span class="p">}</span><span class="w">
+  </span><span class="err">...</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
-<p>This endpoint retrieves all kittens.</p>
-<h3 id='http-request'>HTTP Request</h3>
-<p><code>GET http://example.com/api/kittens</code></p>
-<h3 id='query-parameters'>Query Parameters</h3>
+<p>Cette fonction permet de récupérer toute votre liste de tournois</p>
+<h3 id='requete-http'>Requête HTTP</h3>
+<p><code>GET https://api.doxmatch.net/v1/tournaments</code></p>
+<h3 id='parametres'>Paramètres</h3>
+<p>Aucun paramètre n&#39;est requis pour cette requête</p>
+<h2 id='recuperer-un-tournoi-precis'>Récupérer un tournoi précis</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.doxmatch.net/v1/tournament/1"</span>
+  -H <span class="s2">"X-Auth-Session: yoursessioncode"</span>
+</code></pre>
+<blockquote>
+<p>Le résultat de cette commande sera un tournoi :</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test Tournament"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"creation_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-02-18 19:37:54"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Cette fonction permet de récupérer un tournoi précis via son ID</p>
+<h3 id='requete-http-2'>Requête HTTP</h3>
+<p><code>GET https://api.doxmatch.net/v1/tournament/&lt;ID&gt;</code></p>
+<h3 id='parametres-2'>Paramètres</h3>
 <table><thead>
 <tr>
-<th>Parameter</th>
-<th>Default</th>
+<th>Paramètre</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>include_cats</td>
-<td>false</td>
-<td>If set to true, the result will also include cats.</td>
-</tr>
-<tr>
-<td>available</td>
-<td>true</td>
-<td>If set to false, the result will include kittens that have already been adopted.</td>
+<td>id</td>
+<td>L&#39;Identifiant unique de votre tournoi</td>
 </tr>
 </tbody></table>
-
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
-</aside>
-<h2 id='get-a-specific-kitten'>Get a Specific Kitten</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens/2"</span>
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">max</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+<h2 id='creer-un-nouveau-tournoi'>Créer un nouveau tournoi</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.doxmatch.net/v1/tournament"</span>
+  -X POST
+  -H <span class="s2">"X-Auth-Session: yoursessioncode"</span>
 </code></pre>
 <blockquote>
-<p>The above command returns JSON structured like this:</p>
+<p>Cette requête nécessite l&#39;envoi d&#39;un objet représentant le nouveau tournoi :</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"name"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"New Tournament"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"toornament"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">toornament_id</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>Le résultat de cette commande sera le nouveau tournoi créé :</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Max"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"New Tournament"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"toornament_id"</span><span class="p">:</span><span class="w"> </span><span class="err">toornament_id</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"creation_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-02-24 01:13:37"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>This endpoint retrieves a specific kitten.</p>
-
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
-<h3 id='http-request-2'>HTTP Request</h3>
-<p><code>GET http://example.com/kittens/&lt;ID&gt;</code></p>
-<h3 id='url-parameters'>URL Parameters</h3>
+<p>Cette fonction vous permet de créer un nouveau tournoi</p>
+<h3 id='requete-http-3'>Requête HTTP</h3>
+<p><code>POST https://api.doxmatch.net/v1/tournament</code></p>
+<h3 id='parametres-3'>Paramètres</h3>
 <table><thead>
 <tr>
-<th>Parameter</th>
+<th>Paramètre</th>
+<th>Requis</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>name</td>
+<td>Oui</td>
+<td>Le nom du tournoi</td>
+</tr>
+<tr>
+<td>toornament</td>
+<td>Non</td>
+<td>L&#39;identifiant Toornament, si utilisé</td>
+</tr>
+</tbody></table>
+<h2 id='modifier-un-tournoi'>Modifier un tournoi</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.doxmatch.net/v1/toornament/1"</span>
+  -X PATCH
+  -H <span class="s2">"X-Auth-Session: yoursessioncode"</span>
+</code></pre>
+<blockquote>
+<p>Cette requête nécessite l&#39;envoi d&#39;un objet représentant le tournoi modifié :</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"name"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Edited Tournament"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"toornament"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">new_toornament_id</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>Le résultat de cette commande sera le tournoi modifié :</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Edited Tournament"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"toornament_id"</span><span class="p">:</span><span class="w"> </span><span class="err">new_toornament_id</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"creation_date"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-02-24 01:13:37"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Cette fonction vous permet de modifier un tournoi existant.</p>
+<h3 id='requete-http-4'>Requête HTTP</h3>
+<p><code>PATCH https://api.doxmatch.net/v1/tournament/&lt;ID&gt;</code></p>
+<h3 id='parametres-4'>Paramètres</h3>
+<table><thead>
+<tr>
+<th>Paramètre</th>
+<th>Requis</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>ID</td>
-<td>The ID of the kitten to retrieve</td>
+<td>Oui</td>
+<td>Dans l&#39;URL, identifiant du tournoi à modifier</td>
+</tr>
+<tr>
+<td>name</td>
+<td>Oui</td>
+<td>Le nom du tournoi</td>
+</tr>
+<tr>
+<td>toornament</td>
+<td>Non</td>
+<td>L&#39;identifiant Toornament, si utilisé</td>
 </tr>
 </tbody></table>
-<h2 id='delete-a-specific-kitten'>Delete a Specific Kitten</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens/2"</span>
+<h2 id='supprimer-un-tournoi'>Supprimer un tournoi</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.doxmatch.net/v1/toornament/1"</span>
   -X DELETE
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">max</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="k">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+  -H <span class="s2">"X-Auth-Session: yoursessioncode"</span>
 </code></pre>
 <blockquote>
-<p>The above command returns JSON structured like this:</p>
+<p>Cette commande ne retourne qu&#39;un code 200 si aucune erreur ne survient.</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"deleted"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">":("</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p>This endpoint deletes a specific kitten.</p>
-<h3 id='http-request-3'>HTTP Request</h3>
-<p><code>DELETE http://example.com/kittens/&lt;ID&gt;</code></p>
-<h3 id='url-parameters-2'>URL Parameters</h3>
+
+<p>Cette fonction vous permet de supprimer un tournoi existant.</p>
+<h3 id='requete-http-5'>Requête HTTP</h3>
+<p><code>DELETE https://api.doxmatch.net/v1/tournament/&lt;ID&gt;</code></p>
+<h3 id='parametres-5'>Paramètres</h3>
 <table><thead>
 <tr>
-<th>Parameter</th>
+<th>Paramètre</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>ID</td>
-<td>The ID of the kitten to delete</td>
+<td>Dans l&#39;URL, identifiant du tournoi à modifier</td>
 </tr>
 </tbody></table>
-<h1 id='errors'>Errors</h1>
-<aside class="notice">
-This error section is stored in a separate file in <code>includes/_errors.md</code>. Slate allows you to optionally separate out your docs into many files...just save them to the <code>includes</code> folder and add them to the top of your <code>index.md</code>'s frontmatter. Files are included in the order listed.
-</aside>
 
-<p>The Kittn API uses the following error codes:</p>
-
+          <h1 id='serveurs'>Serveurs</h1><h2 id='l-39-objet-39-serveur-39'>L&#39;objet &#39;Serveur&#39;</h2>
+<blockquote>
+<p>Exemple d&#39;objet Serveur</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"name"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Server name"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"ip"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"172.16.13.37"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"port"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"27015"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"rcon"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"mysuperrcon"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"password"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"pcw"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
 <table><thead>
 <tr>
-<th>Error Code</th>
-<th>Meaning</th>
+<th>Attribut</th>
+<th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>400</td>
-<td>Bad Request -- Your request is invalid.</td>
+<td>id</td>
+<td>L&#39;identifiant unique du serveur</td>
 </tr>
 <tr>
-<td>401</td>
-<td>Unauthorized -- Your API key is wrong.</td>
+<td>name</td>
+<td>Nom du serveur</td>
 </tr>
 <tr>
-<td>403</td>
-<td>Forbidden -- The kitten requested is hidden for administrators only.</td>
+<td>ip</td>
+<td>Adresse IP de connexion au serveur</td>
 </tr>
 <tr>
-<td>404</td>
-<td>Not Found -- The specified kitten could not be found.</td>
+<td>port</td>
+<td>Port de connexion au serveur</td>
 </tr>
 <tr>
-<td>405</td>
-<td>Method Not Allowed -- You tried to access a kitten with an invalid method.</td>
+<td>rcon</td>
+<td>Mot de passe RCon du serveur, nécessaire pour faire fonctionner le DoxMatch</td>
 </tr>
 <tr>
-<td>406</td>
-<td>Not Acceptable -- You requested a format that isn&#39;t json.</td>
+<td>password</td>
+<td>Mot de passe d&#39;accès au serveur</td>
+</tr>
+</tbody></table>
+<h2 id='recuperer-tous-vos-serveurs'>Récupérer tous vos serveurs</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.doxmatch.net/v1/servers"</span>
+  -H <span class="s2">"X-Auth-Session: yoursessioncode"</span>
+</code></pre>
+<blockquote>
+<p>Le résultat de cette commande sera un tableau de serveurs :</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test Server"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"ip"</span><span class="p">:</span><span class="w"> </span><span class="s2">"172.16.13.37"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"port"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"27015"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"rcon"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"mysuperrcon"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"password"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"pcw"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="err">...</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>Cette fonction permet de récupérer toute votre liste de serveurs</p>
+<h3 id='requete-http'>Requête HTTP</h3>
+<p><code>GET https://api.doxmatch.net/v1/servers</code></p>
+<h3 id='parametres'>Paramètres</h3>
+<p>Aucun paramètre n&#39;est requis pour cette requête</p>
+<h2 id='recuperer-un-serveur-precis'>Récupérer un serveur précis</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.doxmatch.net/v1/server/1"</span>
+  -H <span class="s2">"X-Auth-Session: yoursessioncode"</span>
+</code></pre>
+<blockquote>
+<p>Le résultat de cette commande sera un serveur :</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test Server"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"ip"</span><span class="p">:</span><span class="w"> </span><span class="s2">"172.16.13.37"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"port"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"27015"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"rcon"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"mysuperrcon"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"password"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"pcw"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Cette fonction permet de récupérer un serveur précis via son ID</p>
+<h3 id='requete-http-2'>Requête HTTP</h3>
+<p><code>GET https://api.doxmatch.net/v1/server/&lt;ID&gt;</code></p>
+<h3 id='parametres-2'>Paramètres</h3>
+<table><thead>
+<tr>
+<th>Paramètre</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>L&#39;Identifiant unique de votre serveur</td>
+</tr>
+</tbody></table>
+<h2 id='creer-un-nouveau-serveur'>Créer un nouveau serveur</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.doxmatch.net/v1/server"</span>
+  -X POST
+  -H <span class="s2">"X-Auth-Session: yoursessioncode"</span>
+</code></pre>
+<blockquote>
+<p>Cette requête nécessite l&#39;envoi d&#39;un objet représentant le nouveau serveur :</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test Server #2"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"ip"</span><span class="p">:</span><span class="w"> </span><span class="s2">"172.16.13.37"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"port"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"27025"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"rcon"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"mysuperrcon"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"password"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"pcw"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>Le résultat de cette commande sera le nouveau serveur créé :</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test Server"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"ip"</span><span class="p">:</span><span class="w"> </span><span class="s2">"172.16.13.37"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"port"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"27025"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"rcon"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"mysuperrcon"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"password"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"pcw"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Cette fonction vous permet de créer un nouveau serveur</p>
+<h3 id='requete-http-3'>Requête HTTP</h3>
+<p><code>POST https://api.doxmatch.net/v1/server</code></p>
+<h3 id='parametres-3'>Paramètres</h3>
+<table><thead>
+<tr>
+<th>Paramètre</th>
+<th>Requis</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>name</td>
+<td>Oui</td>
+<td>Le nom du serveur</td>
 </tr>
 <tr>
-<td>410</td>
-<td>Gone -- The kitten requested has been removed from our servers.</td>
+<td>ip</td>
+<td>Oui</td>
+<td>L&#39;adresse IP du serveur</td>
 </tr>
 <tr>
-<td>418</td>
-<td>I&#39;m a teapot.</td>
+<td>port</td>
+<td>Oui</td>
+<td>Le port de connexion du serveur</td>
 </tr>
 <tr>
-<td>429</td>
-<td>Too Many Requests -- You&#39;re requesting too many kittens! Slow down!</td>
+<td>rcon</td>
+<td>Oui</td>
+<td>Le mot de passe RCon du serveur</td>
 </tr>
 <tr>
-<td>500</td>
-<td>Internal Server Error -- We had a problem with our server. Try again later.</td>
+<td>password</td>
+<td>Non</td>
+<td>Le mot de passe d&#39;accès au serveur</td>
+</tr>
+</tbody></table>
+<h2 id='modifier-un-serveur'>Modifier un serveur</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.doxmatch.net/v1/server/2"</span>
+  -X PATCH
+  -H <span class="s2">"X-Auth-Session: yoursessioncode"</span>
+</code></pre>
+<blockquote>
+<p>Cette requête nécessite l&#39;envoi d&#39;un objet représentant le serveur modifié :</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"My Super Server"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"ip"</span><span class="p">:</span><span class="w"> </span><span class="s2">"172.16.13.37"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"port"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"27025"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"rcon"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"mysuperrcon"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"password"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"pcw"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>Le résultat de cette commande sera le serveur modifié :</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"My Super Server"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"ip"</span><span class="p">:</span><span class="w"> </span><span class="s2">"172.16.13.37"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"port"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"27025"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"rcon"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"mysuperrcon"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"password"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"pcw"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Cette fonction vous permet de modifier un serveur existant.</p>
+<h3 id='requete-http-4'>Requête HTTP</h3>
+<p><code>PATCH https://api.doxmatch.net/v1/server/&lt;ID&gt;</code></p>
+<h3 id='parametres-4'>Paramètres</h3>
+<table><thead>
+<tr>
+<th>Paramètre</th>
+<th>Requis</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>ID</td>
+<td>Oui</td>
+<td>Dans l&#39;URL, identifiant du serveur à modifier</td>
 </tr>
 <tr>
-<td>503</td>
-<td>Service Unavailable -- We&#39;re temporarily offline for maintenance. Please try again later.</td>
+<td>name</td>
+<td>Oui</td>
+<td>Le nom du serveur</td>
+</tr>
+<tr>
+<td>ip</td>
+<td>Oui</td>
+<td>L&#39;adresse IP du serveur</td>
+</tr>
+<tr>
+<td>port</td>
+<td>Oui</td>
+<td>Le port de connexion du serveur</td>
+</tr>
+<tr>
+<td>rcon</td>
+<td>Oui</td>
+<td>Le mot de passe RCon du serveur</td>
+</tr>
+<tr>
+<td>password</td>
+<td>Non</td>
+<td>Le mot de passe d&#39;accès au serveur</td>
+</tr>
+</tbody></table>
+<h2 id='supprimer-un-serveur'>Supprimer un serveur</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.doxmatch.net/v1/server/2"</span>
+  -X DELETE
+  -H <span class="s2">"X-Auth-Session: yoursessioncode"</span>
+</code></pre>
+<blockquote>
+<p>Cette commande ne retourne qu&#39;un code 200 si aucune erreur ne survient.</p>
+</blockquote>
+
+<p>Cette fonction vous permet de supprimer un serveur existant.</p>
+<h3 id='requete-http-5'>Requête HTTP</h3>
+<p><code>DELETE https://api.doxmatch.net/v1/server/&lt;ID&gt;</code></p>
+<h3 id='parametres-5'>Paramètres</h3>
+<table><thead>
+<tr>
+<th>Paramètre</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>ID</td>
+<td>Dans l&#39;URL, identifiant du serveur à modifier</td>
+</tr>
+</tbody></table>
+
+          <h1 id='matchs'>Matchs</h1><h2 id='l-39-objet-39-match-39'>L&#39;objet &#39;Match&#39;</h2>
+<blockquote>
+<p>Exemple d&#39;objet Match</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"server"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="err">object</span><span class="w"> </span><span class="err">Server</span><span class="w"> </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"tournament"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="err">object</span><span class="w"> </span><span class="err">Tournament</span><span class="w"> </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"map"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"de_dust2"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"team1"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Team Alpha"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"team2"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Team Bravo"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"score1"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"score2"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">13</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"switched_side"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"match_cfg"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"match"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"match_mr"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"overtime_cfg"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"overtime_mr"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"class"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"primary"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"text"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"En jeu - Side 2"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<table><thead>
+<tr>
+<th>Attribut</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>L&#39;identifiant unique du match</td>
+</tr>
+<tr>
+<td>server</td>
+<td>L&#39;objet &quot;Serveur&quot; représentant le serveur sur lequel ce match est joué</td>
+</tr>
+<tr>
+<td>tournament</td>
+<td>L&#39;objet &quot;Tournoi&quot; représentant le tournoi auquel ce match appartient</td>
+</tr>
+<tr>
+<td>map</td>
+<td>Le nom de la map jouée sur ce match</td>
+</tr>
+<tr>
+<td>team1</td>
+<td>Le nom de l&#39;équipe actuellement en CT</td>
+</tr>
+<tr>
+<td>team2</td>
+<td>Le nom de l&#39;équipe actuellement en T</td>
+</tr>
+<tr>
+<td>score1</td>
+<td>Score actuel de l&#39;équipe CT</td>
+</tr>
+<tr>
+<td>score2</td>
+<td>Score actuel de l&#39;équipe T</td>
+</tr>
+<tr>
+<td>switched_side</td>
+<td>Détermine si les équipes ont été inversées depuis le paramétrage initial (utilisé en interne pour Toornament)</td>
+</tr>
+<tr>
+<td>match_cfg</td>
+<td>Nom du fichier de configuration contenant les règles du match</td>
+</tr>
+<tr>
+<td>match_mr</td>
+<td>Nombre de round joués à chaque side</td>
+</tr>
+<tr>
+<td>overtime_cfg</td>
+<td>Si un overtime est nécessaire, nom du fichier de configuration contenant les règles de l&#39;overtime</td>
+</tr>
+<tr>
+<td>overtime_mr</td>
+<td>Si un overtime est nécessaire, nombre de round joués à chaque side d&#39;overtime</td>
+</tr>
+<tr>
+<td>status</td>
+<td>Objet représentant le statut actuel du match</td>
+</tr>
+</tbody></table>
+<h2 id='recuperer-tous-vos-matchs'>Récupérer tous vos matchs</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.doxmatch.net/v1/matches"</span>
+  -H <span class="s2">"X-Auth-Session: yoursessioncode"</span>
+</code></pre>
+<blockquote>
+<p>Le résultat de cette commande sera un tableau de matchs :</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+    </span><span class="s2">"id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"server"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="err">object</span><span class="w"> </span><span class="err">Server</span><span class="w"> </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"tournament"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="err">object</span><span class="w"> </span><span class="err">Tournament</span><span class="w"> </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"map"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"de_dust2"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"team1"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Team Alpha"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"team2"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Team Bravo"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"score1"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"score2"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">13</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"switched_side"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"match_cfg"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"match"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"match_mr"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"overtime_cfg"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"overtime_mr"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"class"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"primary"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"text"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"En jeu - Side 2"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="err">...</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>Cette fonction permet de récupérer toute votre liste de matchs</p>
+<h3 id='requete-http'>Requête HTTP</h3>
+<p><code>GET https://api.doxmatch.net/v1/matches</code></p>
+<h3 id='parametres'>Paramètres</h3>
+<p>Aucun paramètre n&#39;est requis pour cette requête</p>
+<h2 id='recuperer-un-serveur-precis'>Récupérer un serveur précis</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.doxmatch.net/v1/match/1"</span>
+  -H <span class="s2">"X-Auth-Session: yoursessioncode"</span>
+</code></pre>
+<blockquote>
+<p>Le résultat de cette commande sera un match :</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"server"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="err">object</span><span class="w"> </span><span class="err">Server</span><span class="w"> </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"tournament"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="err">object</span><span class="w"> </span><span class="err">Tournament</span><span class="w"> </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"map"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"de_dust2"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"team1"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Team Alpha"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"team2"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Team Bravo"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"score1"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"score2"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">13</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"switched_side"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"match_cfg"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"match"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"match_mr"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"overtime_cfg"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"overtime_mr"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"class"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"primary"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"text"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"En jeu - Side 2"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Cette fonction permet de récupérer un match précis via son ID</p>
+<h3 id='requete-http-2'>Requête HTTP</h3>
+<p><code>GET https://api.doxmatch.net/v1/match/&lt;ID&gt;</code></p>
+<h3 id='parametres-2'>Paramètres</h3>
+<table><thead>
+<tr>
+<th>Paramètre</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>L&#39;Identifiant unique de votre match</td>
+</tr>
+</tbody></table>
+<h2 id='creer-un-nouveau-match'>Créer un nouveau match</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.doxmatch.net/v1/match"</span>
+  -X POST
+  -H <span class="s2">"X-Auth-Session: yoursessioncode"</span>
+</code></pre>
+<blockquote>
+<p>Cette requête nécessite l&#39;envoi d&#39;un objet représentant le nouveau match :</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test Server #2"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"ip"</span><span class="p">:</span><span class="w"> </span><span class="s2">"172.16.13.37"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"port"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"27025"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"rcon"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"mysuperrcon"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"password"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"pcw"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>Le résultat de cette commande sera le nouveau match créé :</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"server"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"tournament"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"map"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"de_dust2"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"team1"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Team Charlie"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"team2"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Team Delta"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"score1"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"score2"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"switched_side"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"match_cfg"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"match"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"match_mr"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"overtime_cfg"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"overtime_mr"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"class"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"primary"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"text"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"En jeu - Side 2"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Cette fonction vous permet de créer un nouveau match</p>
+<h3 id='requete-http-3'>Requête HTTP</h3>
+<p><code>POST https://api.doxmatch.net/v1/match</code></p>
+<h3 id='parametres-3'>Paramètres</h3>
+<table><thead>
+<tr>
+<th>Paramètre</th>
+<th>Requis</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>team1</td>
+<td>Oui</td>
+<td>Le nom de l&#39;équipe en CT</td>
+</tr>
+<tr>
+<td>team2</td>
+<td>Oui</td>
+<td>Le nom de l&#39;équipe en T</td>
+</tr>
+<tr>
+<td>match_cfg</td>
+<td>Non</td>
+<td>Le nom du fichier de configuration contenant les règles du match</td>
+</tr>
+<tr>
+<td>match_mr</td>
+<td>Non</td>
+<td>Le nombre de rounds joués à chaque side</td>
+</tr>
+<tr>
+<td>overtime_cfg</td>
+<td>Non</td>
+<td>Le nom du fichier de configuration contenant les règles de l&#39;overtime</td>
+</tr>
+<tr>
+<td>overtime_mr</td>
+<td>Non</td>
+<td>Le nombre de rounds à chaque side d&#39;overtime</td>
+</tr>
+<tr>
+<td>server_id</td>
+<td>Non</td>
+<td>L&#39;identifiant du serveur à utiliser</td>
+</tr>
+<tr>
+<td>map_id</td>
+<td>Non</td>
+<td>L&#39;identifiant de la map sur laquelle jouer</td>
+</tr>
+<tr>
+<td>tournament_id</td>
+<td>Non</td>
+<td>L&#39;identifiant du tournoi dans lequel est joué ce match</td>
+</tr>
+</tbody></table>
+<h2 id='modifier-un-match'>Modifier un match</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.doxmatch.net/v1/match/2"</span>
+  -X PATCH
+  -H <span class="s2">"X-Auth-Session: yoursessioncode"</span>
+</code></pre>
+<blockquote>
+<p>Cette requête nécessite l&#39;envoi d&#39;un objet représentant le match modifié :</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"My Super Server"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"ip"</span><span class="p">:</span><span class="w"> </span><span class="s2">"172.16.13.37"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"port"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"27025"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"rcon"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"mysuperrcon"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"password"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"pcw"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>Le résultat de cette commande sera le match modifié :</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"My Super Server"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"ip"</span><span class="p">:</span><span class="w"> </span><span class="s2">"172.16.13.37"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"port"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"27025"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"rcon"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"mysuperrcon"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"password"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"pcw"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Cette fonction vous permet de modifier un match existant.</p>
+<h3 id='requete-http-4'>Requête HTTP</h3>
+<p><code>PATCH https://api.doxmatch.net/v1/match/&lt;ID&gt;</code></p>
+<h3 id='parametres-4'>Paramètres</h3>
+<table><thead>
+<tr>
+<th>Paramètre</th>
+<th>Requis</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>ID</td>
+<td>Oui</td>
+<td>Dans l&#39;URL, identifiant du serveur à modifier</td>
+</tr>
+<tr>
+<td>name</td>
+<td>Oui</td>
+<td>Le nom du serveur</td>
+</tr>
+<tr>
+<td>ip</td>
+<td>Oui</td>
+<td>L&#39;adresse IP du serveur</td>
+</tr>
+<tr>
+<td>port</td>
+<td>Oui</td>
+<td>Le port de connexion du serveur</td>
+</tr>
+<tr>
+<td>rcon</td>
+<td>Oui</td>
+<td>Le mot de passe RCon du serveur</td>
+</tr>
+<tr>
+<td>password</td>
+<td>Non</td>
+<td>Le mot de passe d&#39;accès au serveur</td>
+</tr>
+</tbody></table>
+<h2 id='supprimer-un-match'>Supprimer un match</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.doxmatch.net/v1/match/2"</span>
+  -X DELETE
+  -H <span class="s2">"X-Auth-Session: yoursessioncode"</span>
+</code></pre>
+<blockquote>
+<p>Cette commande ne retourne qu&#39;un code 200 si aucune erreur ne survient.</p>
+</blockquote>
+
+<p>Cette fonction vous permet de supprimer un match existant.</p>
+<h3 id='requete-http-5'>Requête HTTP</h3>
+<p><code>DELETE https://api.doxmatch.net/v1/match/&lt;ID&gt;</code></p>
+<h3 id='parametres-5'>Paramètres</h3>
+<table><thead>
+<tr>
+<th>Paramètre</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>ID</td>
+<td>Dans l&#39;URL, identifiant du match à modifier</td>
 </tr>
 </tbody></table>
 
@@ -495,9 +961,6 @@ This error section is stored in a separate file in <code>includes/_errors.md</co
       <div class="dark-box">
           <div class="lang-selector">
                 <a href="#" data-language-name="shell">shell</a>
-                <a href="#" data-language-name="ruby">ruby</a>
-                <a href="#" data-language-name="python">python</a>
-                <a href="#" data-language-name="javascript">javascript</a>
           </div>
       </div>
     </div>
